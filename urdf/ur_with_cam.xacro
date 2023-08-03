@@ -94,9 +94,13 @@
     />
   </xacro:if>
 
-  <link name='world' />
 
   <xacro:property name="base" value="$(arg base)"/>
+
+  <xacro:if value="${base != 'static'}">
+    <link name='world' />
+  </xacro:if>
+
   <xacro:if value="${base == 'static'}">
     <xacro:include filename="$(find ur_with_cam_gazebo)/urdf/inc/static_base.xacro"/>
     <xacro:static_base
@@ -128,11 +132,19 @@
       transmission_hw_interface="$(arg transmission_hw_interface)"
     />
   </xacro:if>
+  <xacro:if value="${base == 'box'}">
+    <xacro:include filename="$(find ur_with_cam_gazebo)/urdf/inc/box.xacro"/>
+    <xacro:trollomatic
+      prefix=""
+      arm_prefix="arm_"
+      transmission_hw_interface="$(arg transmission_hw_interface)"
+    />
+  </xacro:if>
 
-  <xacro:property name="include_room" value="$(arg include_room)"/>
+  <!-- <xacro:property name="include_room" value="$(arg include_room)"/>
   <xacro:if value="${include_room}">
     <xacro:include filename="$(find ur_with_cam_gazebo)/urdf/inc/room.xacro"/>
     <xacro:room/>
-  </xacro:if>
+  </xacro:if> -->
 
 </robot>
