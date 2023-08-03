@@ -132,14 +132,6 @@
       transmission_hw_interface="$(arg transmission_hw_interface)"
     />
   </xacro:if>
-  <xacro:if value="${base == 'box'}">
-    <xacro:include filename="$(find ur_with_cam_gazebo)/urdf/inc/box.xacro"/>
-    <xacro:trollomatic
-      prefix=""
-      arm_prefix="arm_"
-      transmission_hw_interface="$(arg transmission_hw_interface)"
-    />
-  </xacro:if>
 
   <!-- <xacro:property name="include_room" value="$(arg include_room)"/>
   <xacro:if value="${include_room}">
