@@ -87,12 +87,12 @@
           <color rgba="${base_visual_material_color}"/>
         </material>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
         <geometry>
           <mesh filename="${base_collision_mesh}"/>
         </geometry>
-      </collision>
+      </collision> -->
       <xacro:cylinder_inertial radius="${base_inertia_radius}" length="${base_inertia_length}" mass="${base_mass}">
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
@@ -107,12 +107,12 @@
           <color rgba="${shoulder_visual_material_color}"/>
         </material>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
         <geometry>
           <mesh filename="${shoulder_collision_mesh}"/>
         </geometry>
-      </collision>
+      </collision> -->
       <xacro:cylinder_inertial radius="${shoulder_inertia_radius}" length="${shoulder_inertia_length}" mass="${shoulder_mass}">
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
@@ -127,12 +127,12 @@
           <color rgba="${upper_arm_visual_material_color}"/>
         </material>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin xyz="0 0 ${shoulder_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
           <mesh filename="${upper_arm_collision_mesh}"/>
         </geometry>
-      </collision>
+      </collision> -->
       <xacro:cylinder_inertial radius="${upperarm_inertia_radius}" length="${upperarm_inertia_length}" mass="${upper_arm_mass}">
         <origin xyz="${-0.5 * upperarm_inertia_length} 0.0 ${upper_arm_inertia_offset}" rpy="0 ${pi/2} 0" />
       </xacro:cylinder_inertial>
@@ -147,12 +147,12 @@
           <color rgba="${forearm_visual_material_color}"/>
         </material>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin xyz="0 0 ${elbow_offset}" rpy="${pi/2} 0 ${-pi/2}"/>
         <geometry>
           <mesh filename="${forearm_collision_mesh}"/>
         </geometry>
-      </collision>
+      </collision> -->
       <xacro:cylinder_inertial radius="${forearm_inertia_radius}" length="${forearm_inertia_length}"  mass="${forearm_mass}">
         <origin xyz="${-0.5 * forearm_inertia_length} 0.0 ${elbow_offset}" rpy="0 ${pi/2} 0" />
       </xacro:cylinder_inertial>
@@ -168,12 +168,12 @@
           <color rgba="${wrist_1_visual_material_color}"/>
         </material>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin xyz="0 0 ${wrist_1_visual_offset}" rpy="${pi/2} 0 0"/>
         <geometry>
           <mesh filename="${wrist_1_collision_mesh}"/>
         </geometry>
-      </collision>
+      </collision> -->
       <xacro:cylinder_inertial radius="${wrist_1_inertia_radius}" length="${wrist_1_inertia_length}"  mass="${wrist_1_mass}">
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
@@ -188,12 +188,12 @@
           <color rgba="${wrist_2_visual_material_color}"/>
         </material>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin xyz="0 0 ${wrist_2_visual_offset}" rpy="0 0 0"/>
         <geometry>
           <mesh filename="${wrist_2_collision_mesh}"/>
         </geometry>
-      </collision>
+      </collision> -->
       <xacro:cylinder_inertial radius="${wrist_2_inertia_radius}" length="${wrist_2_inertia_length}"  mass="${wrist_2_mass}">
         <origin xyz="0 0 0" rpy="0 0 0" />
       </xacro:cylinder_inertial>
@@ -208,12 +208,12 @@
           <color rgba="${wrist_3_visual_material_color}"/>
         </material>
       </visual>
-      <collision>
+      <!-- <collision>
         <origin xyz="0 0 ${wrist_3_visual_offset}" rpy="${pi/2} 0 0"/>
         <geometry>
           <mesh filename="${wrist_3_collision_mesh}"/>
         </geometry>
-      </collision>
+      </collision> -->
       <xacro:cylinder_inertial radius="${wrist_3_inertia_radius}" length="${wrist_3_inertia_length}"  mass="${wrist_3_mass}">
         <origin xyz="0.0 0.0 ${-0.5 * wrist_3_inertia_length}" rpy="0 0 0" />
       </xacro:cylinder_inertial>
