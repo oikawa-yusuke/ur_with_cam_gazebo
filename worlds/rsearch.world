@@ -1,0 +1,1102 @@
+<?xml version="1.0" ?>
+<sdf version='1.6'>
+  <world name='default'>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10 10</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10 10</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+    </model>
+
+    <link name="world"/>    
+
+    <!-- copy from https://github.com/Eruvae/ur_with_cam_gazebo/blob/master/worlds/world14.world -->
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <!-- <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene> -->
+    <scene>
+      <ambient>0.7 0.7 0.7 1</ambient>
+      <background>0.1 0.1 0.1 1</background>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>1.08256 -1.56126 1.30646 -0 0.464791 2.02594</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+
+    <light name='user_directional_light_0' type='directional'>
+      <pose frame=''>0 0  2 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <!-- plants -->
+    <model name='capsicum_plant_9'>
+      <link name='link_capsicum_plant_9'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.6 0.0 0.5 0 -0 0</pose>
+    </model>
+
+    <model name='capsicum_plant_9_1-2'>
+      <link name='link_capsicum_plant_9_1-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.6 0.0 0.0 0 -0 0</pose>
+    </model>
+
+    <model name='capsicum_plant_2'>
+      <link name='link_capsicum_plant_2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_2/meshes/VG07_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_2/meshes/VG07_2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.3 0.0 0.3 0 -0 0</pose>
+    </model>
+
+    <model name='capsicum_plant_2-2'>
+      <link name='link_capsicum_plant_2-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_2/meshes/VG07_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_2/meshes/VG07_2.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.3 0.0 0.0 0 -0 1.57</pose>
+    </model>
+
+    <model name='capsicum_plant_9_2'>
+      <link name='link_capsicum_plant_9_2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.0 0.0 0.7 0 -0 0</pose>
+    </model>
+
+    <model name='capsicum_plant_9_2-2'>
+      <link name='link_capsicum_plant_9_2-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.0 0.0 0.0 0 -0 1.57</pose>
+    </model>
+
+    <model name='capsicum_plant_9_3'>
+      <link name='link_capsicum_plant_9_3'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.3 0.0 0.5 0 -0 1.57</pose>
+    </model>
+
+    <model name='capsicum_plant_9_3-2'>
+      <link name='link_capsicum_plant_9_3-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.3 0.0 0.0 0 -0 1.57</pose>
+    </model>
+
+    <model name='capsicum_plant_9_4'>
+      <link name='link_capsicum_plant_9_4'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.6 0.0 0.6 0 -0 0</pose>
+    </model>
+
+    <model name='capsicum_plant_9_4-2'>
+      <link name='link_capsicum_plant_9_4-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.6 0.0 0.0 0 -0 1.57</pose>
+    </model>
+
+   <include>
+      <name>box0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.675028 0.10583 1.053398 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.685823 0.090979 1.046385 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.685989 0.084699 1.019959 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.38953299999999996 -0.019512 0.493864 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.395481 -0.015405 0.491495 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.39421 -0.016774 0.476833 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-3</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.37713 -0.003291 0.482006 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-4</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.364794 -0.023537 0.472833 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-5</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.33870300000000003 0.000964 0.470025 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-6</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.366619 -0.003338 0.45173 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-7</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.26457400000000003 0.086616 0.446197 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-8</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.26332799999999995 0.078793 0.447888 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-9</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.14788800000000002 0.069285 0.438707 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-10</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.27890200000000004 0.067055 0.442771 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-11</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.27587500000000004 0.068274 0.412514 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-12</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.30954999999999994 0.048448 0.423437 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-13</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.28953999999999996 0.034372 0.390099 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-14</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.30365499999999995 0.002329 0.416808 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.043644000000000016 -0.001591 1.014062 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.040049 -0.003993 1.004062 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.06077100000000002 0.001483 1.005915 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-3</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.05052400000000001 0.024575 0.996482 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-4</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.063114 0.007809 0.971675 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-5</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.089117 0.02826 0.986193 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-6</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.18832799999999994 0.044446 0.9599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-7</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.17230599999999996 0.030351 0.960627 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-8</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.17240299999999997 0.031432 0.960025 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-9</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.152725 0.055378 0.948025 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-10</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.17347599999999996 0.034799 0.930806 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-11</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.13550799999999996 0.021455 0.941313 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-12</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.13422800000000001 0.049845 0.908437 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-13</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.10139200000000004 0.056882 0.940753 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-14</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.006520999999999999 0.146851 0.924535 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-15</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.008296999999999999 0.155459 0.91566 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-16</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.0015119999999999578 0.134831 0.911536 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-17</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.026950999999999947 0.133655 0.915051 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-18</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.0015119999999999578 0.128803 0.879798 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-19</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.017742000000000036 0.096175 0.904145 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-20</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.036487999999999965 0.085663 0.858901 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-21</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.06259499999999996 0.107943 0.896084 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-22</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.054505000000000026 0.051741 0.896589 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.08463599999999993 0.193984 1.157523 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.04270799999999997 0.186983 1.166402 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.04793999999999987 0.189874 1.133469 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-3</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.09668699999999997 0.177699 1.110805 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-4</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.07396099999999994 0.153979 1.148244 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-5</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.13132499999999991 0.161993 1.144301 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-6</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.025731999999999866 0.204249 1.168328 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-7</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.033299999999999885 0.207604 1.174694 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-8</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.04641099999999998 0.21265 1.161387 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-9</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.13415899999999992 0.083243 1.161704 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-10</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.1275139999999999 0.116063 1.190956 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-11</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.13503199999999993 0.065358 1.198984 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-12</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.12588399999999988 0.115392 1.191197 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-13</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.15607499999999996 0.030497 1.213092 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-14</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.160269 0.046757 1.211083 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-15</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.16673499999999997 0.084702 1.192097 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-16</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.15281499999999992 0.049616 1.183369 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-17</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.174342 0.158097 1.222826 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-18</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.15831799999999996 0.132627 1.236389 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-19</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.18304699999999996 0.161286 1.254284 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-20</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.1602999999999999 0.168535 1.245644 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-21</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.1869559999999999 0.180161 1.254782 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-22</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.18408899999999995 0.176792 1.263489 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-23</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3710119999999999 -0.101537 0.923028 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-24</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.393628 -0.098964 0.924839 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-25</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3756529999999999 -0.104168 0.931377 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-26</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.42997699999999994 -0.068402 0.888649 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-27</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.43896699999999994 -0.081536 0.864977 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-28</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.42190199999999994 -0.103917 0.882142 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-29</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.44997299999999996 -0.076074 0.895791 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-30</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.45167699999999994 -0.061733 0.899066 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-31</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.4551529999999999 -0.05518 0.897011 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-32</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3954589999999999 -0.176571 0.836218 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-33</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.42427599999999993 -0.158657 0.833175 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-34</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.4137159999999999 -0.193369 0.847968 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-35</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.4094749999999999 -0.202652 0.845279 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-36</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.4126039999999999 -0.195692 0.824538 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-37</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.4006239999999999 -0.155054 0.802196 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-38</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.390528 -0.126947 0.83391 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.42694999999999994 0.161432 1.153709 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.42257900000000004 0.162922 1.144529 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.443983 0.15934 1.146259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-3</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.434474 0.136794 1.137623 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-4</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.44659399999999994 0.152928 1.112867 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-5</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.47221499999999994 0.133388 1.129324 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-6</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.572769 0.129904 1.109374 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-7</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.573398 0.121455 1.108325 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-8</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.556936 0.135244 1.106694 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-9</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.559843 0.129641 1.077641 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-10</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.540333 0.108828 1.094338 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-11</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.521698 0.142185 1.085365 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-12</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.523093 0.112841 1.054458 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-13</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.48897499999999994 0.104189 1.084317 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-14</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.39679699999999996 0.009286 1.06473 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-15</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.4013169999999999 0.002217 1.056832 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-16</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.391991 0.02283 1.05177 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-17</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.418424 0.025632 1.057314 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-18</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.417133 0.028963 1.020953 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-19</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.408832 0.061894 1.042965 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-20</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.45340199999999997 0.051784 1.038231 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-21</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.430986 0.072627 1.000125 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-22</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.44412399999999996 -0.155876 1.036929 0 0 0</pose>
+    </include>
+  </world>
+</sdf>
