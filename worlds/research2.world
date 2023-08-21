@@ -1,0 +1,2166 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10 10</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>10 10</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/White</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+    </model>
+
+    <link name="world"/>    
+
+    <!-- copy from https://github.com/Eruvae/ur_with_cam_gazebo/blob/master/worlds/world14.world -->
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <!-- <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene> -->
+    <scene>
+      <ambient>0.7 0.7 0.7 1</ambient>
+      <background>0.1 0.1 0.1 1</background>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>1.08256 -1.56126 1.30646 -0 0.464791 2.02594</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+
+    <light name='user_directional_light_0' type='directional'>
+      <pose frame=''>0 0  2 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.1 0.1 -0.9</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>1</cast_shadows>
+    </light>
+
+    <!-- plants -->
+
+    <model name='capsicum_plant_9_1-1'>
+      <link name='link_capsicum_plant_9_1-1'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.6 0.0 0.0 0 0 1.57</pose>
+    </model>
+
+    <model name='capsicum_plant_9_1-2'>
+      <link name='link_capsicum_plant_9_1-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.6 0.0 0.5 0 0 1.57</pose>
+    </model>
+
+    <model name='capsicum_plant_9_2-1'>
+      <link name='link_capsicum_plant_9_2-1'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.3 0.0 0.0 0 0 3.14</pose>
+    </model>
+
+    <model name='capsicum_plant_9_2-2'>
+      <link name='link_capsicum_plant_9_2-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.3 0.0 0.5 0 0 0.0</pose>
+    </model>
+
+    <model name='capsicum_plant_9_3-1'>
+      <link name='link_capsicum_plant_9_3-1'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.0 0.0 0.0 0 0 -1.57</pose>
+    </model>
+
+    <model name='capsicum_plant_9_3-2'>
+      <link name='link_capsicum_plant_9_3-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.0 0.0 0.5 0 0 -1.57</pose>
+    </model>
+
+    <model name='capsicum_plant_9_4-1'>
+      <link name='link_capsicum_plant_9_4-1'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.3 0.0 0.0 0 0 0.0</pose>
+    </model>
+
+    <model name='capsicum_plant_9_4-2'>
+      <link name='link_capsicum_plant_9_4-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.3 0.0 0.5 0 0 3.14</pose>
+    </model>
+
+    <model name='capsicum_plant_9_5-1'>
+      <link name='link_capsicum_plant_9_5-1'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.6 0.0 0.0 0 0 1.57</pose>
+    </model>
+
+    <model name='capsicum_plant_9_5-2'>
+      <link name='link_capsicum_plant_9_5-2'>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://capsicum_plant_9/meshes/VG07_9.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <enable_wind>0</enable_wind>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.6 0.0 0.5 0 0 1.57</pose>
+    </model>
+
+
+    <include>
+      <name>box0-0-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.586241 -0.095815 0.523013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.590961 -0.080487 0.522027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.599586 -0.088561 0.511164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.571757 -0.058112 0.502072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.579395 -0.055977 0.491599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.556618 -0.050978 0.488583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.569253 0.058528 0.335821 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.582077 -0.068901 0.571277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.592519 -0.06714 0.565084 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.576539 -0.062738 0.563259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.605484 0.080859 0.383614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.590124 0.083 0.384586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.594147 0.091448 0.374858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.556561 -0.090508 0.547621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.557452 -0.102142 0.537241 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.545813 -0.087427 0.534572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.599722 -0.097739 0.343591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.606187 -0.086179 0.33394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.596048 -0.100917 0.331682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.564527 -0.098496 0.481485 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.556079 -0.091894 0.473098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.5405409999999999 -0.077735 0.386263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.537085 -0.06955 0.375088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.5876939999999999 -0.052727 0.438662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.601389 -0.050029 0.426812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.607816 0.037109 0.382639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.600861 0.022927 0.375637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-0-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.614939 0.02448 0.369505 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.586241 -0.095815 1.023013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.590961 -0.080487 1.022027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.599586 -0.088561 1.011164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.571757 -0.058112 1.002072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.579395 -0.055977 0.991599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.556618 -0.050978 0.988583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.569253 0.058528 0.8358209999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.582077 -0.068901 1.071277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.592519 -0.06714 1.0650840000000001 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.576539 -0.062738 1.063259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.605484 0.080859 0.883614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.590124 0.083 0.884586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.594147 0.091448 0.874858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.556561 -0.090508 1.047621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.557452 -0.102142 1.0372409999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.545813 -0.087427 1.034572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.599722 -0.097739 0.843591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.606187 -0.086179 0.83394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.596048 -0.100917 0.831682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.564527 -0.098496 0.9814849999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.556079 -0.091894 0.973098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.5405409999999999 -0.077735 0.886263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.537085 -0.06955 0.875088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.5876939999999999 -0.052727 0.938662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.601389 -0.050029 0.926812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.607816 0.037109 0.882639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.600861 0.022927 0.875637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box0-1-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.614939 0.02448 0.869505 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.204185 0.013759 0.523013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.219513 0.009039 0.522027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.211439 0.000414 0.511164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.24188799999999994 0.028243 0.502072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.24402299999999993 0.020605 0.491599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.24902200000000002 0.043382 0.488583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.358528 0.030747 0.335821 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.231099 0.017923 0.571277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.23286 0.007481 0.565084 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.23726200000000003 0.023461 0.563259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.380859 -0.005484 0.383614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.38299999999999995 0.009876 0.384586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.39144799999999996 0.005853 0.374858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.20949199999999996 0.043439 0.547621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.19785799999999998 0.042548 0.537241 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.21257299999999996 0.054187 0.534572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.20226099999999997 0.000278 0.343591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.21382099999999998 -0.006187 0.33394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.19908299999999995 0.003952 0.331682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.20150399999999996 0.035473 0.481485 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.20810599999999996 0.043921 0.473098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.222265 0.059459 0.386263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.23045 0.062915 0.375088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.24727300000000002 0.012306 0.438662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.249971 -0.001389 0.426812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.33710899999999994 -0.007816 0.382639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.322927 -0.000861 0.375637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-0-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.32447999999999994 -0.014939 0.369505 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.395815 -0.013759 1.023013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.38048699999999996 -0.009039 1.022027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.388561 -0.000414 1.011164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.35811200000000004 -0.028243 1.002072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.35597700000000004 -0.020605 0.991599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.35097799999999996 -0.043382 0.988583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.24147199999999996 -0.030747 0.8358209999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.368901 -0.017923 1.071277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.36713999999999997 -0.007481 1.0650840000000001 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.36273799999999995 -0.023461 1.063259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.21914099999999997 0.005484 0.883614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.21700000000000003 -0.009876 0.884586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.20855200000000002 -0.005853 0.874858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.390508 -0.043439 1.047621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.40214199999999994 -0.042548 1.0372409999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.387427 -0.054187 1.034572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.397739 -0.000278 0.843591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.386179 0.006187 0.83394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.400917 -0.003952 0.831682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.398496 -0.035473 0.9814849999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.391894 -0.043921 0.973098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.377735 -0.059459 0.886263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.36955 -0.062915 0.875088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.35272699999999996 -0.012306 0.938662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.350029 0.001389 0.926812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.26289100000000004 0.007816 0.882639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.27707299999999996 0.000861 0.875637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box1-1-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.27552000000000004 0.014939 0.869505 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.013758999999999966 0.095815 0.523013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.00903900000000002 0.080487 0.522027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.00041400000000002546 0.088561 0.511164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.028243000000000018 0.058112 0.502072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.020604999999999984 0.055977 0.491599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.04338200000000003 0.050978 0.488583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.03074699999999997 -0.058528 0.335821 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.017923000000000022 0.068901 0.571277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.00748099999999996 0.06714 0.565084 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.023460999999999954 0.062738 0.563259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.005484000000000044 -0.080859 0.383614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.009875999999999996 -0.083 0.384586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.005852999999999997 -0.091448 0.374858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.043439000000000005 0.090508 0.547621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.04254800000000003 0.102142 0.537241 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.054186999999999985 0.087427 0.534572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.00027800000000000047 0.097739 0.343591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.006187000000000054 0.086179 0.33394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.0039519999999999555 0.100917 0.331682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.03547299999999998 0.098496 0.481485 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.04392099999999999 0.091894 0.473098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.05945900000000004 0.077735 0.386263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.06291499999999994 0.06955 0.375088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.012306000000000039 0.052727 0.438662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.0013889999999999736 0.050029 0.426812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.007816000000000045 -0.037109 0.382639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.0008610000000000007 -0.022927 0.375637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-0-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.014939000000000036 -0.02448 0.369505 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.013758999999999966 0.095815 1.023013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.00903900000000002 0.080487 1.022027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.00041400000000002546 0.088561 1.011164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.028243000000000018 0.058112 1.002072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.020604999999999984 0.055977 0.991599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.04338200000000003 0.050978 0.988583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.03074699999999997 -0.058528 0.8358209999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.017923000000000022 0.068901 1.071277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.00748099999999996 0.06714 1.0650840000000001 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.023460999999999954 0.062738 1.063259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.005484000000000044 -0.080859 0.883614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.009875999999999996 -0.083 0.884586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.005852999999999997 -0.091448 0.874858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.043439000000000005 0.090508 1.047621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.04254800000000003 0.102142 1.0372409999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.054186999999999985 0.087427 1.034572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.00027800000000000047 0.097739 0.843591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.006187000000000054 0.086179 0.83394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.0039519999999999555 0.100917 0.831682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.03547299999999998 0.098496 0.9814849999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.04392099999999999 0.091894 0.973098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.05945900000000004 0.077735 0.886263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.06291499999999994 0.06955 0.875088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>-0.012306000000000039 0.052727 0.938662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.0013889999999999736 0.050029 0.926812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.007816000000000045 -0.037109 0.882639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.0008610000000000007 -0.022927 0.875637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box2-1-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.014939000000000036 -0.02448 0.869505 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.20418499999999995 -0.013759 0.523013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.21951299999999996 -0.009039 0.522027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.21143899999999993 -0.000414 0.511164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.24188799999999988 -0.028243 0.502072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.24402299999999988 -0.020605 0.491599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.24902199999999997 -0.043382 0.488583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.35852799999999996 -0.030747 0.335821 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.23109899999999994 -0.017923 0.571277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.23285999999999996 -0.007481 0.565084 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.23726199999999997 -0.023461 0.563259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.38085899999999995 0.005484 0.383614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3829999999999999 -0.009876 0.384586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3914479999999999 -0.005853 0.374858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.2094919999999999 -0.043439 0.547621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.19785799999999998 -0.042548 0.537241 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.2125729999999999 -0.054187 0.534572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.2022609999999999 -0.000278 0.343591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.21382099999999993 0.006187 0.33394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.1990829999999999 -0.003952 0.331682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.2015039999999999 -0.035473 0.481485 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.2081059999999999 -0.043921 0.473098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.22226499999999993 -0.059459 0.386263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.23044999999999993 -0.062915 0.375088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.24727299999999997 -0.012306 0.438662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.24997099999999994 0.001389 0.426812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3371089999999999 0.007816 0.382639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.32292699999999996 0.000861 0.375637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-0-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3244799999999999 0.014939 0.369505 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3958149999999999 0.013759 1.023013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3804869999999999 0.009039 1.022027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.38856099999999993 0.000414 1.011164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.358112 0.028243 1.002072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.355977 0.020605 0.991599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3509779999999999 0.043382 0.988583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.2414719999999999 0.030747 0.8358209999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3689009999999999 0.017923 1.071277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3671399999999999 0.007481 1.0650840000000001 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3627379999999999 0.023461 1.063259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.21914099999999992 -0.005484 0.883614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.21699999999999997 0.009876 0.884586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.20855199999999996 0.005853 0.874858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.39050799999999997 0.043439 1.047621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.40214199999999994 0.042548 1.0372409999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.38742699999999997 0.054187 1.034572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.39773899999999995 0.000278 0.843591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.38617899999999994 -0.006187 0.83394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.40091699999999997 0.003952 0.831682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.39849599999999996 0.035473 0.9814849999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.39189399999999996 0.043921 0.973098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.37773499999999993 0.059459 0.886263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.36954999999999993 0.062915 0.875088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3527269999999999 0.012306 0.938662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.3500289999999999 -0.001389 0.926812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.262891 -0.007816 0.882639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.2770729999999999 -0.000861 0.875637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box3-1-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.27552 -0.014939 0.869505 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6137589999999999 -0.095815 0.523013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.609039 -0.080487 0.522027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.600414 -0.088561 0.511164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.628243 -0.058112 0.502072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.620605 -0.055977 0.491599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.643382 -0.050978 0.488583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.630747 0.058528 0.335821 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.617923 -0.068901 0.571277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6074809999999999 -0.06714 0.565084 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6234609999999999 -0.062738 0.563259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.5945159999999999 0.080859 0.383614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.609876 0.083 0.384586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.605853 0.091448 0.374858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.643439 -0.090508 0.547621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.642548 -0.102142 0.537241 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.654187 -0.087427 0.534572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.600278 -0.097739 0.343591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.5938129999999999 -0.086179 0.33394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6039519999999999 -0.100917 0.331682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.635473 -0.098496 0.481485 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.643921 -0.091894 0.473098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.659459 -0.077735 0.386263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6629149999999999 -0.06955 0.375088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.612306 -0.052727 0.438662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.598611 -0.050029 0.426812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.5921839999999999 0.037109 0.382639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.599139 0.022927 0.375637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-0-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.5850609999999999 0.02448 0.369505 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-0-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6137589999999999 -0.095815 1.023013 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-0-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.609039 -0.080487 1.022027 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-0-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.600414 -0.088561 1.011164 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-1-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.628243 -0.058112 1.002072 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-1-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.620605 -0.055977 0.991599 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-1-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.643382 -0.050978 0.988583 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-2-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.630747 0.058528 0.8358209999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-3-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.617923 -0.068901 1.071277 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-3-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6074809999999999 -0.06714 1.0650840000000001 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-3-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6234609999999999 -0.062738 1.063259 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-4-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.5945159999999999 0.080859 0.883614 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-4-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.609876 0.083 0.884586 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-4-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.605853 0.091448 0.874858 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-5-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.643439 -0.090508 1.047621 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-5-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.642548 -0.102142 1.0372409999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-5-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.654187 -0.087427 1.034572 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-6-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.600278 -0.097739 0.843591 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-6-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.5938129999999999 -0.086179 0.83394 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-6-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6039519999999999 -0.100917 0.831682 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-7-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.635473 -0.098496 0.9814849999999999 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-7-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.643921 -0.091894 0.973098 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-8-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.659459 -0.077735 0.886263 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-8-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.6629149999999999 -0.06955 0.875088 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-9-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.612306 -0.052727 0.938662 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-9-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.598611 -0.050029 0.926812 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-10-0</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.5921839999999999 0.037109 0.882639 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-10-1</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.599139 0.022927 0.875637 0 0 0</pose>
+    </include>
+    <include>
+      <name>box4-1-10-2</name>
+      <uri>model://box</uri>
+      <static>true</static>
+      <pose>0.5850609999999999 0.02448 0.869505 0 0 0</pose>
+    </include>
+  </world>
+</sdf>
